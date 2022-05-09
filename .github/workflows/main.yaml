@@ -1,0 +1,15 @@
+# This Github workflow will run jobs to build java-app.
+name: java-app
+on:
+  push:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
+permissions:
+  pull-requests: write
+jobs:
+  generate-metadata:
+    uses: ploigos-github-demo/java-app-actions/.github/workflows/generate-metadata.yaml@gfulton-skeleton
+
