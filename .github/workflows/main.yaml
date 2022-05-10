@@ -24,4 +24,14 @@ jobs:
     uses: ploigos/ploigos-github-workflows/.github/workflows/ci-create-container-image.yaml@main
   ci-push-container-image-to-repository:
     uses: ploigos/ploigos-github-workflows/.github/workflows/ci-push-container-image-to-repository.yaml@main
+  dev-stage-gate:
+    uses: ploigos/ploigos-github-workflows/.github/workflows/dev-stage-gate.yaml@main
+  dev-deploy-or-update-environment:
+    uses: ploigos/ploigos-github-workflows/.github/workflows/dev-deploy-or-update-environment.yaml@main
+  test-stage-gate:
+    uses: ploigos/ploigos-github-workflows/.github/workflows/test-stage-gate.yaml@main
+  test-deploy-or-update-environment:
+    uses: ploigos/ploigos-github-workflows/.github/workflows/test-deploy-or-update-environment.yaml@main
+  report:
+    uses: ploigos/ploigos-github-workflows/.github/workflows/report.yaml@main
 
