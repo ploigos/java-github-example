@@ -11,5 +11,5 @@ permissions:
   pull-requests: write
 jobs:
   generate-metadata:
-    uses: ploigos-github-demo/java-app-actions/.github/workflows/generate-metadata.yaml@gfulton-skeleton
+    uses:  ploigos/ploigos-github-workflows/.github/workflows/generate-metadata.yaml@main
 
