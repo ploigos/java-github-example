@@ -10,28 +10,107 @@ on:
 permissions:
   pull-requests: write
 jobs:
-  setup-stage-gate:
-    uses: ploigos/ploigos-github-workflows/.github/workflows/setup-stage-gate.yaml@main
   setup-app-clone:
     uses: ploigos/ploigos-github-workflows/.github/workflows/setup-app-clone.yaml@main
-  ci-stage-gate:
-    uses: ploigos/ploigos-github-workflows/.github/workflows/ci-stage-gate.yaml@main
+    with:
+      verbose: 'true'
+      image: 'ubi8-minimal'
+      imagePullPolicy: 'Always'
+      url: 'http://test/'
+      revision: 'rev3'
+      deleteExisting: 'true'
+      sslVerify: 'true'
+      refspec: '+refs/heads/$(params.appRepoRef):$(params.appRepoRef)'
+  setup-workflow-step-runner:
+    uses: ploigos/ploigos-github-workflows/.github/workflows/setup-workflow-step-runner.yaml@main
+    with:
+      verbose: 'true'
+      image: 'ubi8-minimal'
+      imagePullPolicy: 'Always'
+      stepRunnerPackageName: 'testtest'
+      stepRunnerUpdateLibrary: 'libtest'
+      stepRunnerLibSourceUrl: 'http://test/'
+      stepRunnerLibIndexUrl: 'http://test/'
+      stepRunnerLibExtraIndexUrl: 'http://test/'
+      stepRunnerLibVersion: 'v3'
+  setup-pgp-keys:
+    uses: ploigos/ploigos-github-workflows/.github/workflows/setup-pgp-keys.yaml@main
+    with:
+      verbose: 'true'
+      image: 'ubi8-minimal'
+      imagePullPolicy: 'Always'
+      pgpKeysSecretName: 'testtest'
   ci-generate-metadata:
     uses: ploigos/ploigos-github-workflows/.github/workflows/ci-generate-metadata.yaml@main
+    with:
+      verbose: 'true'
+      image: 'ubi8-minimal'
+      imagePullPolicy: 'Always'
+      venvPath: '.'
+      stepRunnerPackageName: 'psr'
+      stepName: 'test-step'
+      stepRunnerConfigDir: '/opt/'
   ci-package-application:
     uses: ploigos/ploigos-github-workflows/.github/workflows/ci-package-application.yaml@main
+    with:
+      verbose: 'true'
+      image: 'ubi8-minimal'
+      imagePullPolicy: 'Always'
+      venvPath: '.'
+      stepRunnerPackageName: 'psr'
+      stepName: 'test-step'
+      stepRunnerConfigDir: '/opt/'
   ci-create-container-image:
     uses: ploigos/ploigos-github-workflows/.github/workflows/ci-create-container-image.yaml@main
+    with:
+      verbose: 'true'
+      image: 'ubi8-minimal'
+      imagePullPolicy: 'Always'
+      venvPath: '.'
+      stepRunnerPackageName: 'psr'
+      stepName: 'test-step'
+      stepRunnerConfigDir: '/opt/'
   ci-push-container-image-to-repository:
     uses: ploigos/ploigos-github-workflows/.github/workflows/ci-push-container-image-to-repository.yaml@main
-  dev-stage-gate:
-    uses: ploigos/ploigos-github-workflows/.github/workflows/dev-stage-gate.yaml@main
+    with:
+      verbose: 'true'
+      image: 'ubi8-minimal'
+      imagePullPolicy: 'Always'
+      venvPath: '.'
+      stepRunnerPackageName: 'psr'
+      stepName: 'test-step'
+      stepRunnerConfigDir: '/opt/'
   dev-deploy-or-update-environment:
     uses: ploigos/ploigos-github-workflows/.github/workflows/dev-deploy-or-update-environment.yaml@main
-  test-stage-gate:
-    uses: ploigos/ploigos-github-workflows/.github/workflows/test-stage-gate.yaml@main
+    with:
+      verbose: 'true'
+      image: 'ubi8-minimal'
+      imagePullPolicy: 'Always'
+      venvPath: '.'
+      stepRunnerPackageName: 'psr'
+      stepName: 'test-step'
+      stepRunnerConfigDir: '/opt/'
+      environment: 'dev'
   test-deploy-or-update-environment:
     uses: ploigos/ploigos-github-workflows/.github/workflows/test-deploy-or-update-environment.yaml@main
+    with:
+      verbose: 'true'
+      image: 'ubi8-minimal'
+      imagePullPolicy: 'Always'
+      venvPath: '.'
+      stepRunnerPackageName: 'psr'
+      stepName: 'test-step'
+      stepRunnerConfigDir: '/opt/'
+      environment: 'test'
   report:
     uses: ploigos/ploigos-github-workflows/.github/workflows/report.yaml@main
+    with:
+      verbose: 'true'
+      image: 'ubi8-minimal'
+      imagePullPolicy: 'Always'
+      venvPath: '.'
+      stepRunnerPackageName: 'psr'
+      stepName: 'test-step'
+      stepRunnerConfigDir: '/opt/'
+      environment: 'test'
 
