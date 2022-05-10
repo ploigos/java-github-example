@@ -14,6 +14,14 @@ jobs:
     uses: ploigos/ploigos-github-workflows/.github/workflows/setup-stage-gate.yaml@main
   setup-app-clone:
     uses: ploigos/ploigos-github-workflows/.github/workflows/setup-app-clone.yaml@main
-  generate-metadata:
-    uses: ploigos/ploigos-github-workflows/.github/workflows/generate-metadata.yaml@main
+  ci-stage-gate:
+    uses: ploigos/ploigos-github-workflows/.github/workflows/ci-stage-gate.yaml@main
+  ci-generate-metadata:
+    uses: ploigos/ploigos-github-workflows/.github/workflows/ci-generate-metadata.yaml@main
+  ci-package-application:
+    uses: ploigos/ploigos-github-workflows/.github/workflows/ci-package-application.yaml@main
+  ci-create-container-image:
+    uses: ploigos/ploigos-github-workflows/.github/workflows/ci-create-container-image.yaml@main
+  ci-push-container-image-to-repository:
+    uses: ploigos/ploigos-github-workflows/.github/workflows/ci-push-container-image-to-repository.yaml@main
 
