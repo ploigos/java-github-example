@@ -13,10 +13,21 @@ jobs:
   minimal:
     uses: ploigos/ploigos-github-workflows/.github/workflows/minimal.yaml@main
     with:
-      verbose: 'true'
+      verbose: 'false'
       image: 'ubi8-minimal'
       imagePullPolicy: 'Always'
-      venvPath: '.'
       stepRunnerPackageName: 'psr'
+      venvPath: '.'
       stepName: 'test-step'
       stepRunnerConfigDir: '/opt/'
+      url: 'http://test/'
+      revision: 'rev2'
+      deleteExisting: 'true'
+      sslVerify: 'false'
+      refspec: '+refs/heads/$(params.appRepoRef):$(params.appRepoRef)'
+      pgpKeysSecretName: 'testsecret'
+      stepRunnerUpdateLibrary: 'testlib'
+      stepRunnerLibSourceUrl: 'http://test/'
+      stepRunnerLibIndexUrl: 'http://test/'
+      stepRunnerLibExtraIndexUrl: 'http://test/'
+      stepRunnerLibVersion: 'v3'
