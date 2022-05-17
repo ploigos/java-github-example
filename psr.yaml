@@ -27,8 +27,8 @@ step-runner-config:
   - implementer: Git
   - implementer: SemanticVersion
 
-#  package:
-#  - implementer: MavenPackage
+  package:
+  - implementer: MavenPackage
 #
 #  create-container-image:
 #  - implementer: Buildah
