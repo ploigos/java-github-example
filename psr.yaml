@@ -29,9 +29,9 @@ step-runner-config:
 
   package:
   - implementer: MavenPackage
-#
-#  create-container-image:
-#  - implementer: Buildah
+
+  create-container-image:
+  - implementer: Buildah
 #
 #  push-container-image:
 #  - implementer: Skopeo
