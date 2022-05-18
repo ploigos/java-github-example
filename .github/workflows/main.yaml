@@ -1,5 +1,6 @@
 # This Github workflow will run jobs to build java-app.
 name: java-app
+
 on:
   push:
   pull_request_target:
@@ -9,6 +10,7 @@ on:
       - synchronize
 permissions:
   pull-requests: write
+
 jobs:
   minimal:
     uses: ploigos/ploigos-github-workflows/.github/workflows/minimal.yaml@createimage
