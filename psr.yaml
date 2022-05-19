@@ -5,7 +5,8 @@ step-runner-config:
 
   global-defaults:
     organization: ploigos
-    service-name: fruit
+    service-name: java-github-example
+    application-name: java-github-example
 
 #    maven-servers:
 #      nexus.apps.tssc.rht.set.com:
@@ -29,9 +30,9 @@ step-runner-config:
 
   package:
   - implementer: MavenPackage
-#
-#  create-container-image:
-#  - implementer: Buildah
+
+  create-container-image:
+  - implementer: Buildah
 #
 #  push-container-image:
 #  - implementer: Skopeo
