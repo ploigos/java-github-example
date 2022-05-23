@@ -5,7 +5,7 @@ step-runner-config:
 
   global-defaults:
     organization: ploigos
-    service-name: java-github-example
+#    service-name: java-github-example
     application-name: java-github-example
 
 #    maven-servers:
