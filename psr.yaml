@@ -37,7 +37,7 @@ step-runner-config:
   push-container-image:
   - implementer: Skopeo
     config:
-      destination-url: quay.io/aagreen/
+      destination-url: quay.io/aagreen
 #  - implementer: PelorusCommitTimestampMetric
 #    config:
 #      pelorus-prometheus-pushgateway-url: https://pelorus-prometheus-pushgateway.apps.tssc.rht-set.com
