@@ -33,11 +33,11 @@ step-runner-config:
 
   create-container-image:
   - implementer: Buildah
-#
-#  push-container-image:
-#  - implementer: Skopeo
-#    config:
-#      destination-url: registry-internal-nexus.apps.tssc.rht-set.com
+
+  push-container-image:
+  - implementer: Skopeo
+    config:
+      destination-url: quay.io
 #  - implementer: PelorusCommitTimestampMetric
 #    config:
 #      pelorus-prometheus-pushgateway-url: https://pelorus-prometheus-pushgateway.apps.tssc.rht-set.com
