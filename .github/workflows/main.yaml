@@ -1,5 +1,5 @@
 # This Github workflow will run jobs to build java-app.
-name: java-app
+name: java-github-example
 
 on:
   push:
