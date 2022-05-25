@@ -52,6 +52,8 @@ step-runner-config:
       deployment-config-repo: https://github.com/ploigos/java-github-example-ops.git
       deployment-config-helm-chart-path: charts/java-github-example-deploy
       deployment-config-helm-chart-values-file-image-tag-yq-path: 'image.tag'
+      git-username: ${{ secrets.GITUSER }}
+      git-password: ${{ secrets.GITPASS }}
       git-email: 'ploigos+it@redhat.com'
       argocd-sync-timeout-seconds: 130
       force-push-tags: true
