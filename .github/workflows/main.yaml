@@ -14,4 +14,4 @@ permissions:
 
 jobs:
   minimal:
-    uses: ploigos/ploigos-github-workflows/.github/workflows/minimal.yaml@main
+    uses: ploigos/ploigos-github-workflows/.github/workflows/minimal.yaml@deploytest
