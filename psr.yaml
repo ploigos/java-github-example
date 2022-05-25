@@ -49,7 +49,7 @@ step-runner-config:
       argocd-api: openshift-gitops-server-openshift-gitops.apps.swfocp.sandbox204.opentlc.com
       argocd-username: admin
       argocd-skip-tls: True
-      deployment-config-repo: github.com/ploigos/java-github-example
+      deployment-config-repo: https://github.com/ploigos/java-github-example-ops.git
       deployment-config-helm-chart-path: charts/java-github-example-deploy
       deployment-config-helm-chart-values-file-image-tag-yq-path: 'image.tag'
       git-email: 'ploigos+it@redhat.com'
