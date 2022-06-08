@@ -47,7 +47,7 @@ step-runner-config:
   deploy:
   - implementer: ArgoCD
     config:
-      argocd-api: openshift-gitops-server.openshift-gitops.svc.cluster.local
+      argocd-api: argocd-server.devsecops.svc.cluster.local
       argocd-username: admin
       argocd-skip-tls: True
       deployment-config-repo: https://github.com/ploigos/java-github-example-ops.git
