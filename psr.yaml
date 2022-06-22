@@ -45,7 +45,7 @@ step-runner-config:
 #      pelorus-app-name: reference-quarkus-mvn-jenkins-min
 #
   deploy:
-  - implementer: ArgoCD
+  - implementer: ArgoCDDeploy
     config:
       argocd-api: argocd-server.devsecops.svc.cluster.local
       argocd-username: admin
